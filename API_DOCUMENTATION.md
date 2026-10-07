@@ -1,6 +1,6 @@
 # API Documentation
 
-AirAware utilizes public APIs provided by [Open-Meteo](https://open-meteo.com/). All requests are handled via Axios in dedicated service modules.
+AeroSense utilizes public APIs provided by [Open-Meteo](https://open-meteo.com/). All requests are handled via Axios in dedicated service modules.
 
 ---
 

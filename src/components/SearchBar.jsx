@@ -18,7 +18,7 @@ export default function SearchBar({ onSearch, loading }) {
 
   return (
     <form className="search-bar" onSubmit={handleSubmit} role="search">
-      <label htmlFor="city-input" className="search-bar-label">Location</label>
+      <label htmlFor="city-input" className="search-bar-label">Search location</label>
       <div className="search-bar-row">
         <div className="search-bar-input-wrap">
           <Search size={16} className="search-bar-icon" aria-hidden="true" />
@@ -26,7 +26,7 @@ export default function SearchBar({ onSearch, loading }) {
             id="city-input"
             type="text"
             className="search-bar-input"
-            placeholder="Search city or region…"
+            placeholder="Enter a city or region name..."
             value={input}
             onChange={(e) => {
               setInput(e.target.value);

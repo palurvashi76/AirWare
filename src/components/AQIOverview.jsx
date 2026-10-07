@@ -7,11 +7,20 @@ export default function AQIOverview({ airQuality }) {
 
   return (
     <div className="aqi-overview">
-      <div className="aqi-overview-value-wrap">
-        <span className="aqi-overview-label">European AQI</span>
-        <span className="aqi-overview-value" style={{ color: category.color }}>
-          {currentAQI != null ? Math.round(currentAQI) : '—'}
-        </span>
+      <div className="aqi-ring-wrap">
+        <div
+          className="aqi-ring"
+          style={{
+            background: `conic-gradient(${category.color} ${Math.min((currentAQI || 0) / 100 * 100, 100)}%, var(--border) 0)`
+          }}
+        >
+          <div className="aqi-ring-inner">
+            <span className="aqi-ring-value" style={{ color: category.color }}>
+              {currentAQI != null ? Math.round(currentAQI) : '—'}
+            </span>
+            <span className="aqi-ring-label">EU AQI</span>
+          </div>
+        </div>
       </div>
       <div className="aqi-overview-info">
         <div className="aqi-overview-status" style={{ color: category.color }}>

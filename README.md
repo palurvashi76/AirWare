@@ -1,10 +1,10 @@
-# AirAware
+# AeroSense
 
 A professional global air-quality dashboard that fetches real API data and displays it using reusable React components.
 
 ## Overview
 
-AirAware allows users to search for any city globally and view current air quality, pollutant breakdowns, weather context, and a 5-day air quality forecast. It demonstrates React API integration, component reusability, and robust error/loading state handling without relying on a backend.
+AeroSense allows users to search for any city globally and view current air quality, pollutant breakdowns, weather context, and a 5-day air quality forecast. It demonstrates React API integration, component reusability, and robust error/loading state handling without relying on a backend.
 
 ## Features
 

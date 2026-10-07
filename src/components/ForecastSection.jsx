@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Calendar } from 'lucide-react';
 import { getAQICategory } from '../utils/airQuality';
 import { formatDayLabel } from '../utils/formatters';
 
@@ -28,22 +29,27 @@ export default function ForecastSection({ airQuality }) {
 
   return (
     <div className="forecast-section">
-      <div className="forecast-section-title">Air Quality Forecast</div>
-      <div className="forecast-grid" role="list" aria-label="Air quality forecast">
-        {forecast.map((day, index) => {
-          const category = getAQICategory(day.avgAQI);
-          return (
-            <div className="forecast-card" key={day.date} role="listitem">
-              <div className="forecast-card-day">{formatDayLabel(day.date, index)}</div>
-              <div className="forecast-card-value" style={{ color: category.color }}>
-                {day.avgAQI}
+      <h2 className="section-title">
+        <Calendar size={16} className="section-title-icon" strokeWidth={2.5} />
+        Air Quality Forecast
+      </h2>
+      <div className="forecast-card-wrap">
+        <div className="forecast-grid" role="list" aria-label="Air quality forecast">
+          {forecast.map((day, index) => {
+            const category = getAQICategory(day.avgAQI);
+            return (
+              <div className="forecast-card" key={day.date} role="listitem" style={{ backgroundColor: `${category.color}08` }}>
+                <div className="forecast-card-day">{formatDayLabel(day.date, index)}</div>
+                <div className="forecast-card-value" style={{ color: category.color }}>
+                  {day.avgAQI}
+                </div>
+                <div className="forecast-card-label" style={{ color: category.color }}>
+                  {category.label}
+                </div>
               </div>
-              <div className="forecast-card-label" style={{ color: category.color }}>
-                {category.label}
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
